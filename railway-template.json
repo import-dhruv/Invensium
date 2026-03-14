@@ -1,0 +1,38 @@
+{
+  "name": "CoreInventory Backend",
+  "description": "Complete inventory management system backend with PostgreSQL",
+  "repository": "https://github.com/import-dhruv/Invensium",
+  "branch": "backend",
+  "services": [
+    {
+      "name": "coreinventory-backend",
+      "source": {
+        "type": "github",
+        "repo": "import-dhruv/Invensium",
+        "branch": "backend"
+      },
+      "variables": {
+        "NODE_ENV": "production",
+        "JWT_EXPIRES_IN": "7d",
+        "PORT": "3000"
+      },
+      "domains": [
+        {
+          "name": "coreinventory-api"
+        }
+      ]
+    },
+    {
+      "name": "postgresql",
+      "source": {
+        "type": "postgresql"
+      }
+    }
+  ],
+  "variables": {
+    "JWT_SECRET": {
+      "description": "JWT secret key for authentication (generate with: openssl rand -base64 32)",
+      "required": true
+    }
+  }
+}
