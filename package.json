@@ -6,15 +6,10 @@
   "scripts": {
     "setup": "./setup.sh",
     "dev": "./start-dev.sh",
-    "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend/blueprint-canvas-engine-main && npm run dev",
-    "build": "npm run build:backend && npm run build:frontend",
-    "build:backend": "cd backend && npm run build",
+    "build": "cd frontend/blueprint-canvas-engine-main && npm ci && npm run build",
     "build:frontend": "cd frontend/blueprint-canvas-engine-main && npm run build",
-    "install:all": "cd backend && npm install && cd ../frontend/blueprint-canvas-engine-main && npm install",
-    "db:setup": "cd backend && npx prisma db push && npm run prisma:seed",
-    "db:reset": "cd backend && npx prisma db push --force-reset && npm run prisma:seed",
-    "db:studio": "cd backend && npx prisma studio"
+    "install:all": "cd frontend/blueprint-canvas-engine-main && npm install"
   },
   "keywords": [
     "inventory",

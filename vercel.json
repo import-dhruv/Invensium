@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "name": "coreinventory-frontend",
+  "buildCommand": "cd frontend/blueprint-canvas-engine-main && npm ci && npm run build",
+  "outputDirectory": "frontend/blueprint-canvas-engine-main/dist",
+  "installCommand": "cd frontend/blueprint-canvas-engine-main && npm ci",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_API_URL": "https://your-backend-api.herokuapp.com/api"
+  }
+}
